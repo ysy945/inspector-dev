@@ -1,6 +1,6 @@
 {
   "name": "inspector-dev",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "inspect components and jump to local IDE",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,9 @@
     "inspector",
     "IDE"
   ],
+  "main": "./es/inspector/index.js",
+  "module": "./es/inspector/index.js",
+  "types":"./es/inspector/index.d.ts" ,
   "exports":{
     ".":{
        "import":"./es/inspector/index.js",
@@ -16,7 +19,12 @@
        "types":"./es/inspector/index.d.ts"
     },
     "./plugins":{
-      "import":"./es/plugins/index.js",
+      "import":"./lib/plugins/index.js",
+      "require":"./lib/plugins/index.js",
+      "types":"./es/plugins/index.d.ts"
+    },
+    "./lib/plugins":{
+      "import":"./lib/plugins/index.js",
       "require":"./lib/plugins/index.js",
       "types":"./es/plugins/index.d.ts"
     }
