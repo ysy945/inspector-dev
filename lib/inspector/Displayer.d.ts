@@ -1,0 +1,43 @@
+import { AllCodeInfo } from "./utils/inspect";
+export default class Displayer {
+    warp: HTMLElement;
+    drag: HTMLElement;
+    background: HTMLElement;
+    content: HTMLElement;
+    conContainer: HTMLElement;
+    isOpen: boolean;
+    isAppend: boolean;
+    isDown: boolean;
+    isDrag: boolean;
+    offsetX: number;
+    offsetY: number;
+    activeDom?: HTMLElement;
+    maxArea: {
+        x: [number, number];
+        y: [number, number];
+    };
+    itemCodeInfoList: AllCodeInfo[];
+    startInspect: (isKeyBoardCtrl: boolean) => void;
+    stopInspect: (isKeyBoardCtrl: boolean) => void;
+    onMousedown: (e: HTMLElementEventMap["mousedown"]) => void;
+    onMouseenter: (e: HTMLElementEventMap["mouseenter"]) => void;
+    onMouseleave: (e: HTMLElementEventMap["mouseleave"]) => void;
+    onMousedownWithDrag: (e: HTMLElementEventMap["mousedown"]) => void;
+    onMouseup: (e: HTMLElementEventMap["mouseup"]) => void;
+    onMousemove: (e: HTMLElementEventMap["mousemove"]) => void;
+    constructor(startInspect: () => void, stopInspect: () => void);
+    open: () => void;
+    close: () => void;
+    append: () => void;
+    addEventListeners: () => void;
+    removeEventListeners: () => void;
+    addItem: (allCodeInfo: AllCodeInfo) => void;
+    createItemChild: (isFirst: boolean, codeInfo: AllCodeInfo, removeListener: () => void) => HTMLDivElement | undefined;
+    createTitle: (name: string | undefined, componentName: string | undefined) => string | undefined;
+    createFilePath: (filename: string | undefined, column: string | undefined, line: string | undefined) => string | undefined;
+    getItemDoms: () => NodeListOf<Element>;
+    active: (dom: HTMLElement) => void;
+    pushCodeInfo: (codeInfo: AllCodeInfo) => boolean;
+    deleteCodeInfo: (codeInfo: AllCodeInfo) => void;
+    isCodeInfoEqual: (A: AllCodeInfo, B: AllCodeInfo) => boolean;
+}

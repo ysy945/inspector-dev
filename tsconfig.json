@@ -1,0 +1,15 @@
+{
+  "files": ["./src/inspector/index.ts","./src/plugins/index.ts"],
+  "compilerOptions": {
+    "target": "ES2015",                                 
+    "module": "CommonJS",                              
+    "esModuleInterop": true,                            
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                                                       
+    "skipLibCheck": true,    
+    "outDir": "lib",
+    "declaration": true, 
+    "moduleResolution": "node16"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+}

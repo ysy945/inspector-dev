@@ -1,0 +1,41 @@
+{
+  "name": "inspector-dev",
+  "version": "0.0.10",
+  "description": "inspect components and jump to local IDE",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "inspector",
+    "IDE"
+  ],
+  "exports":{
+    ".":{
+       "import":"./es/inspector/index.js",
+       "require":"./lib/inspector/index.js",
+       "types":"./es/inspector/index.d.ts"
+    },
+    "./plugins":{
+      "import":"./es/plugins/index.js",
+      "require":"./lib/plugins/index.js",
+      "types":"./es/plugins/index.d.ts"
+    }
+  },
+  "author": "ysy945",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/types": "^7.21.4",
+    "hotkeys-js": "^3.10.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.20.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.34",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-reconciler": "^0.28.2",
+    "vite": "^4.2.1"
+  }
+}
